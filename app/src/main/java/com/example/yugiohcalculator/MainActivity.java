@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity
     private int playerOneLife;
     private int playerTwoLife;
     private TextView editLifeByView;
+    private TextView playerOneLifeView;
+    private TextView playerTwoLifeView;
 
     public MainActivity()
     {
@@ -29,16 +31,18 @@ public class MainActivity extends AppCompatActivity
 
         if (editLifeBy.length() < 5)
         {
-
-            if (buttonPressed == 9) {
+            if (buttonPressed == 9)
+            {
                 editLifeBy += "9";
                 editLifeByView.setText(editLifeBy);
             }
-            if (buttonPressed == 8) {
+            if (buttonPressed == 8)
+            {
                 editLifeBy += "8";
                 editLifeByView.setText(editLifeBy);
             }
-            if (buttonPressed == 7) {
+            if (buttonPressed == 7)
+            {
                 editLifeBy += "7";
                 editLifeByView.setText(editLifeBy);
             }
@@ -46,7 +50,8 @@ public class MainActivity extends AppCompatActivity
                 editLifeBy += "6";
                 editLifeByView.setText(editLifeBy);
             }
-            if (buttonPressed == 5) {
+            if (buttonPressed == 5)
+            {
                 editLifeBy += "5";
                 editLifeByView.setText(editLifeBy);
             }
@@ -54,27 +59,33 @@ public class MainActivity extends AppCompatActivity
                 editLifeBy += "4";
                 editLifeByView.setText(editLifeBy);
             }
-            if (buttonPressed == 3) {
+            if (buttonPressed == 3)
+            {
                 editLifeBy += "3";
                 editLifeByView.setText(editLifeBy);
             }
-            if (buttonPressed == 2) {
+            if (buttonPressed == 2)
+            {
                 editLifeBy += "2";
                 editLifeByView.setText(editLifeBy);
             }
-            if (buttonPressed == 1) {
+            if (buttonPressed == 1)
+            {
                 editLifeBy += "1";
                 editLifeByView.setText(editLifeBy);
             }
-            if (buttonPressed == 0) {
+            if (buttonPressed == 0)
+            {
                 editLifeBy += "0";
                 editLifeByView.setText(editLifeBy);
             }
-            if (buttonPressed == 11) {
+            if (buttonPressed == 11)
+            {
                 editLifeBy += "00";
                 editLifeByView.setText(editLifeBy);
             }
-            if (buttonPressed == 111) {
+            if (buttonPressed == 111)
+            {
                 editLifeBy += "000";
                 editLifeByView.setText(editLifeBy);
             }
@@ -133,12 +144,26 @@ public class MainActivity extends AppCompatActivity
 
     public void subtractLifePlayerTwo(View view)
     {
-        if (!editLifeBy.equals("")) {
+        if (!editLifeBy.equals(""))
+        {
             TextView playerTwoLifeView = (TextView) findViewById(R.id.playerTwoLifeView);
             playerTwoLife -= Integer.parseInt(editLifeBy);
             playerTwoLifeView.setText(Integer.toString(playerTwoLife));
             clearCalculation(editLifeByView);
         }
+    }
+
+    public void resetGame(View view)
+    {
+        playerOneLife = 8000;
+        playerTwoLife = 8000;
+        editLifeBy = "";
+        TextView playerOneLifeView = (TextView) findViewById(R.id.playerOneLifeView);
+        TextView playerTwoLifeView = (TextView) findViewById(R.id.playerTwoLifeView);
+        TextView editLifeByView = (TextView) findViewById(R.id.editLifeByView);
+        editLifeByView.setText("0");
+        playerOneLifeView.setText(Integer.toString(playerOneLife));
+        playerTwoLifeView.setText(Integer.toString(playerTwoLife));
     }
 
     @Override

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -10,13 +11,11 @@
         android:id="@+id/gridLayout"
         android:layout_width="387dp"
         android:layout_height="350dp"
-        android:layout_marginBottom="35dp"
         android:onClick="lifeCalculator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtractionLeft">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/buttonSeven"
@@ -168,17 +167,18 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/yugi" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/kaiba" />
+
     </LinearLayout>
 
     <TextView
@@ -187,11 +187,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
         android:text="8000"
         android:textSize="35sp"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/additionLeft"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
@@ -200,13 +200,13 @@
         android:id="@+id/playerTwoLifeView"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
         android:text="8000"
         android:textSize="35sp"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/additionRight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
@@ -217,8 +217,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginRight="54dp"
+        android:layout_marginBottom="1dp"
         android:onClick="addLifePlayerOne"
         android:text="+"
         app:layout_constraintBottom_toTopOf="@+id/subtractionLeft"
@@ -230,10 +229,9 @@
         android:id="@+id/additionRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="1dp"
         android:onClick="addLifePlayerTwo"
         android:text="+"
         app:layout_constraintBottom_toTopOf="@+id/subtractionRight"
@@ -241,65 +239,45 @@
         app:layout_constraintStart_toEndOf="@+id/dice"
         app:layout_constraintTop_toBottomOf="@+id/playerTwoLifeView" />
 
-    <Button
-        android:id="@+id/subtractionLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginRight="54dp"
-        android:layout_marginBottom="18dp"
-        android:onClick="subtractLifePlayerOne"
-        android:text="-"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintEnd_toStartOf="@+id/dice"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/additionLeft" />
 
     <Button
         android:id="@+id/subtractionRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
         android:layout_marginBottom="18dp"
         android:onClick="subtractLifePlayerTwo"
         android:text="-"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dice"
+        app:layout_constraintStart_toEndOf="@+id/clearButton"
         app:layout_constraintTop_toBottomOf="@+id/additionRight" />
 
     <TextView
         android:id="@+id/editLifeByView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginLeft="95dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="95dp"
-        android:layout_marginRight="95dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
         android:text="0"
         android:textColor="#F44336"
         android:textSize="20sp"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/dice"
-        app:layout_constraintEnd_toStartOf="@+id/playerTwoLifeView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/playerOneLifeView"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
+        app:layout_constraintEnd_toStartOf="@+id/additionRight"
+        app:layout_constraintStart_toEndOf="@+id/additionLeft"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/dice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="4dp"
         android:onClick="diceSimulator"
         android:text="Dice: ?"
         app:layout_constraintBottom_toTopOf="@+id/clearButton"
@@ -311,17 +289,47 @@
         android:id="@+id/clearButton"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="87dp"
-        android:layout_marginLeft="87dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="81dp"
-        android:layout_marginRight="81dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
         android:onClick="clearCalculation"
         android:text="C"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintBottom_toTopOf="@+id/resetButton"
         app:layout_constraintEnd_toStartOf="@+id/subtractionRight"
         app:layout_constraintStart_toEndOf="@+id/subtractionLeft"
         app:layout_constraintTop_toBottomOf="@+id/dice" />
+
+    <Button
+        android:id="@+id/subtractionLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="18dp"
+        android:onClick="subtractLifePlayerOne"
+        android:text="-"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toStartOf="@+id/clearButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/additionLeft" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:onClick="resetGame"
+        android:text="Reset"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toStartOf="@+id/subtractionRight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/subtractionLeft"
+        app:layout_constraintTop_toBottomOf="@+id/clearButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
