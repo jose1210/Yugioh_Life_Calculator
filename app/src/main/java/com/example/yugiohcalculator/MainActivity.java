@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity
         playerTwoLife = 8000;
     }
 
+    /**
+     * Determines the amount to edit the players' life by depending on which button is pressed
+     */
     public void lifeCalculator(View view)
     {
         Button calculatorButton = (Button)view;
@@ -94,6 +97,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Simulates a dice being rolled when the dice button is pressed
+     */
     public void diceSimulator(View view)
     {
         int numberRolled;
@@ -104,6 +110,9 @@ public class MainActivity extends AppCompatActivity
         dice.setText("Dice: " + Integer.toString(numberRolled));
     }
 
+    /**
+     * Clears the textview displaying the amount that the players life will be edited by
+     */
     public void clearCalculation(View view)
     {
         editLifeBy = "";
@@ -111,6 +120,9 @@ public class MainActivity extends AppCompatActivity
         editLifeByView.setText("0");
     }
 
+    /**
+     * Adds the amount determined from the life calculator method to player one
+     */
     public void addLifePlayerOne(View view)
     {
         if (!editLifeBy.equals(""))
@@ -122,6 +134,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     *  Adds the amount determined from the life calculator method to player one
+     */
     public void addLifePlayerTwo(View view)
     {
         if (!editLifeBy.equals(""))
@@ -133,6 +148,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Subtracts life from player one equal to the amount determined from the life calculator method
+     */
     public void subtractLifePlayerOne(View view)
     {
         if (!editLifeBy.equals(""))
@@ -156,6 +174,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Subtracts life from player one equal to the amount determined from the life calculator method
+     */
     public void subtractLifePlayerTwo(View view)
     {
         if (!editLifeBy.equals(""))
@@ -179,6 +200,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Resets all the values on the screen
+     */
     public void resetGame(View view)
     {
         playerOneLife = 8000;
