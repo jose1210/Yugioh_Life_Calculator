@@ -17,14 +17,7 @@ public class MainActivity extends AppCompatActivity
     private TextView playerOneLifeView;
     private TextView playerTwoLifeView;
     private Button dice;
-
-    public MainActivity()
-    {
-        editLifeBy = "";
-        playerOneLife = 8000;
-        playerTwoLife = 8000;
-    }
-
+    
     /**
      * Determines the amount to edit the players' life by depending on which button is pressed
      */
@@ -32,7 +25,6 @@ public class MainActivity extends AppCompatActivity
     {
         Button calculatorButton = (Button)view;
         int buttonPressed = Integer.parseInt(calculatorButton.getTag().toString());
-        TextView editLifeByView = findViewById(R.id.editLifeByView);
 
         if (editLifeBy.length() < 5)
         {
@@ -106,7 +98,6 @@ public class MainActivity extends AppCompatActivity
 
         Random generator = new Random();
         numberRolled = generator.nextInt(6) + 1;
-        dice = (Button)findViewById(R.id.dice);
         dice.setText("Dice: " + Integer.toString(numberRolled));
     }
 
@@ -116,7 +107,6 @@ public class MainActivity extends AppCompatActivity
     public void clearCalculation(View view)
     {
         editLifeBy = "";
-        editLifeByView = findViewById(R.id.editLifeByView);
         editLifeByView.setText("0");
     }
 
@@ -127,7 +117,6 @@ public class MainActivity extends AppCompatActivity
     {
         if (!editLifeBy.equals(""))
         {
-            TextView playerOneLifeView = findViewById(R.id.playerOneLifeView);
             playerOneLife += Integer.parseInt(editLifeBy);
             playerOneLifeView.setText(Integer.toString(playerOneLife));
             clearCalculation(editLifeByView);
@@ -141,7 +130,7 @@ public class MainActivity extends AppCompatActivity
     {
         if (!editLifeBy.equals(""))
         {
-            TextView playerTwoLifeView = (TextView) findViewById(R.id.playerTwoLifeView);
+            //TextView playerTwoLifeView = (TextView) findViewById(R.id.playerTwoLifeView);
             playerTwoLife += Integer.parseInt(editLifeBy);
             playerTwoLifeView.setText(Integer.toString(playerTwoLife));
             clearCalculation(editLifeByView);
@@ -208,9 +197,6 @@ public class MainActivity extends AppCompatActivity
         playerOneLife = 8000;
         playerTwoLife = 8000;
         editLifeBy = "";
-        TextView playerOneLifeView = findViewById(R.id.playerOneLifeView);
-        TextView playerTwoLifeView = findViewById(R.id.playerTwoLifeView);
-        TextView editLifeByView = findViewById(R.id.editLifeByView);
         editLifeByView.setText("0");
         playerOneLifeView.setText(Integer.toString(playerOneLife));
         playerTwoLifeView.setText(Integer.toString(playerTwoLife));
@@ -223,5 +209,13 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        editLifeBy = "";
+        playerOneLife = 8000;
+        playerTwoLife = 8000;
+        editLifeByView = findViewById(R.id.editLifeByView);
+        playerOneLifeView = findViewById(R.id.playerOneLifeView);
+        playerTwoLifeView = (TextView) findViewById(R.id.playerTwoLifeView);
+        dice = (Button)findViewById(R.id.dice);
     }
 }
